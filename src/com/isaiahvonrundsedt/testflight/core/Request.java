@@ -1,6 +1,7 @@
 package com.isaiahvonrundsedt.testflight.core;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Request implements Comparable<Request> {
 
@@ -22,7 +23,7 @@ public class Request implements Comparable<Request> {
      * @param frameLocation is the current or destination index of the request
      *                      object.
      */
-    private long timestamp;
+    private int requestTime;
     /**
      * @param timestamp is the value that will be determined if the request object
      *                  inside the memory block is old enough that its location in
@@ -32,14 +33,12 @@ public class Request implements Comparable<Request> {
     public static final int STATUS_PAGE_HIT = 0;
     public static final int STATUS_PAGE_FAULT = 1;
 
-    public long getTimestamp() { return timestamp; }
-
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
+    public int getRequestTime() {
+        return requestTime;
     }
 
-    public void setTimestamp(Date date){
-        this.timestamp = date.getTime();
+    public void setRequestTime(int requestTime) {
+        this.requestTime = requestTime;
     }
 
     public int getValue() { return value; }
@@ -59,17 +58,9 @@ public class Request implements Comparable<Request> {
             throw new IllegalArgumentException("Request status value must inherit from STATUS_PAGE_FAULT or STATUS_PAGE_HIT");
     }
 
-    public int getFrameLocation() {
-        return frameLocation;
-    }
-
-    public void setFrameLocation(int frameLocation) {
-        this.frameLocation = frameLocation;
-    }
-
     @Override
     public int compareTo(Request otherRequest) {
-        return Long.compare(otherRequest.timestamp, timestamp);
+        return Integer.compare(requestTime, otherRequest.requestTime);
     }
 
     @Override
