@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.isaiahvonrundsedt.testflight.ui.Configurator">
+  <grid id="27dc6" binding="root" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="24" y="25" width="478" height="294"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="4d70b" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="24" left="48" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <font name="Ubuntu" size="18" style="1"/>
+          <text value="TestFlight Configurator"/>
+        </properties>
+      </component>
+      <grid id="92ae3" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag top="24" left="48" bottom="0" right="48" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="5abb6" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <text value="Enter  Page Frame Size:"/>
+            </properties>
+          </component>
+          <component id="6ba4" class="javax.swing.JTextField" binding="pageFrameField">
+            <constraints/>
+            <properties>
+              <columns value="10"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="815b9" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="48" bottom="0" right="48" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="914cb" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <text value="Enter Request Amount:"/>
+            </properties>
+          </component>
+          <component id="bb7c5" class="javax.swing.JTextField" binding="requestAmountField">
+            <constraints/>
+            <properties>
+              <columns value="10"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="32bd" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="48" bottom="0" right="48" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="8e9df" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <text value="Select method:"/>
+            </properties>
+          </component>
+          <component id="b55bb" class="javax.swing.JComboBox" binding="methodBox">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="LRU - Least Recently Used"/>
+                <item value="FIFO - First-In, First-Out"/>
+              </model>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="2684c" class="javax.swing.JButton" binding="okButton">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="24" left="72" bottom="48" right="72" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="OK"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

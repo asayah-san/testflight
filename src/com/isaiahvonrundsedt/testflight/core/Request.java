@@ -18,11 +18,6 @@ public class Request implements Comparable<Request> {
      *               or STATUS_PAGE_FAULT depending if the specified request
      *               object is already on the memory block simulation.
      */
-    private int frameLocation;
-    /**
-     * @param frameLocation is the current or destination index of the request
-     *                      object.
-     */
     private int requestTime;
     /**
      * @param timestamp is the value that will be determined if the request object
