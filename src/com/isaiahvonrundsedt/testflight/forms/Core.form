@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.isaiahvonrundsedt.testflight.forms.Core">
+  <grid id="27dc6" binding="root" layout-manager="BorderLayout" hgap="16" vgap="16">
+    <constraints>
+      <xy x="20" y="20" width="557" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="e407c" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="a06dc" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <font name="Helvetica Neue" size="14" style="0"/>
+              <text value="Enter Request:"/>
+            </properties>
+          </component>
+          <component id="34e89" class="javax.swing.JTextField" binding="requestField">
+            <constraints/>
+            <properties>
+              <columns value="10"/>
+              <font name="Helvetica Neue" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="285f8" class="javax.swing.JButton" binding="requestButton">
+            <constraints/>
+            <properties>
+              <font name="Helvetica Neue" size="14" style="0"/>
+              <text value="OK"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="e49b5" class="javax.swing.JTable" binding="requestsTable" custom-create="true">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <font name="Helvetica Neue" size="14" style="0"/>
+        </properties>
+      </component>
+      <component id="dbfd5" class="javax.swing.JTable" binding="statusTable" custom-create="true">
+        <constraints border-constraint="South"/>
+        <properties>
+          <font name="Helvetica Neue" size="14" style="0"/>
+          <showHorizontalLines value="false"/>
+          <showVerticalLines value="false"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

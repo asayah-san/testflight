@@ -5,7 +5,13 @@ import com.isaiahvonrundsedt.testflight.core.Request;
 import javax.swing.*;
 import java.util.*;
 
-public class TestCLI {
+/**
+ *   TestCLI class is used to test the algorithm of the
+ *   simulator. Do not call or instantiate this class
+ *   on any other classes
+ */
+
+class TestCLI {
 
     private static final int METHOD_TYPE_LRU = 1;
     private static final int METHOD_TYPE_FIFO = 2;
