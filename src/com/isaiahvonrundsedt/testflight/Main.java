@@ -14,9 +14,10 @@ public class Main {
             e.printStackTrace();
         }
 
-        var frame = new JFrame("TestFlight Configurator");
+        JFrame frame = new JFrame("TestFlight Configurator");
         frame.setContentPane(new Configurator(frame).getRoot());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);

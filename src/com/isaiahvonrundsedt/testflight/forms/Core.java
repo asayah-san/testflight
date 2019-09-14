@@ -1,8 +1,11 @@
 package com.isaiahvonrundsedt.testflight.forms;
 
+import com.isaiahvonrundsedt.testflight.core.AppTableModel;
 import com.isaiahvonrundsedt.testflight.core.Request;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,7 +56,6 @@ public class Core implements ActionListener {
                         r.setRequestTime(tracker);
 
                     frames[index] = r;
-
                     for (int i = 0; i < frames.length; i++) {
                         Request request = frames[i];
                         if (request != null)
@@ -77,6 +79,7 @@ public class Core implements ActionListener {
                             requestsTable.setValueAt(request.getValue(), i, requestDone);
                     }
                     updateTable(r.getStatus(), requestDone);
+                    tracker++;
                     requestDone++;
                 }
             } else {
@@ -97,6 +100,7 @@ public class Core implements ActionListener {
                             requestsTable.setValueAt(request.getValue(), i, requestDone);
                     }
                     updateTable(r.getStatus(), requestDone);
+
                     if (method == METHOD_TYPE_LRU)
                         tracker++;
 
@@ -203,7 +207,7 @@ public class Core implements ActionListener {
         return request;
     }
 
-    public JPanel getRoot() {
+    JPanel getRoot() {
         return root;
     }
 
@@ -218,28 +222,29 @@ public class Core implements ActionListener {
         createUIComponents();
         root = new JPanel();
         root.setLayout(new BorderLayout(16, 16));
+        root.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16), null));
         final JPanel panel1 = new JPanel();
         panel1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         root.add(panel1, BorderLayout.NORTH);
         final JLabel label1 = new JLabel();
-        Font label1Font = this.$$$getFont$$$("Helvetica Neue", Font.PLAIN, 14, label1.getFont());
+        Font label1Font = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, label1.getFont());
         if (label1Font != null) label1.setFont(label1Font);
         label1.setText("Enter Request:");
         panel1.add(label1);
         requestField = new JTextField();
         requestField.setColumns(10);
-        Font requestFieldFont = this.$$$getFont$$$("Helvetica Neue", Font.PLAIN, 14, requestField.getFont());
+        Font requestFieldFont = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, requestField.getFont());
         if (requestFieldFont != null) requestField.setFont(requestFieldFont);
         panel1.add(requestField);
         requestButton = new JButton();
-        Font requestButtonFont = this.$$$getFont$$$("Helvetica Neue", Font.PLAIN, 14, requestButton.getFont());
+        Font requestButtonFont = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, requestButton.getFont());
         if (requestButtonFont != null) requestButton.setFont(requestButtonFont);
         requestButton.setText("OK");
         panel1.add(requestButton);
-        Font requestsTableFont = this.$$$getFont$$$("Helvetica Neue", Font.PLAIN, 14, requestsTable.getFont());
+        Font requestsTableFont = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, requestsTable.getFont());
         if (requestsTableFont != null) requestsTable.setFont(requestsTableFont);
         root.add(requestsTable, BorderLayout.CENTER);
-        Font statusTableFont = this.$$$getFont$$$("Helvetica Neue", Font.PLAIN, 14, statusTable.getFont());
+        Font statusTableFont = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, statusTable.getFont());
         if (statusTableFont != null) statusTable.setFont(statusTableFont);
         statusTable.setShowHorizontalLines(false);
         statusTable.setShowVerticalLines(false);
@@ -273,7 +278,27 @@ public class Core implements ActionListener {
     }
 
     private void createUIComponents() {
-        requestsTable = new JTable(frameSize, requestsAmount);
-        statusTable = new JTable(1, requestsAmount);
+        DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
+        renderer.setHorizontalAlignment(JLabel.CENTER);
+
+        int defaultCellSize = 20;
+
+        requestsTable = new JTable(new AppTableModel(frameSize, requestsAmount));
+        requestsTable.setRowHeight(defaultCellSize);
+
+        TableColumnModel requestModel = requestsTable.getColumnModel();
+        for (int i = 0; i < requestsTable.getColumnModel().getColumnCount(); i++) {
+            requestModel.getColumn(i).setPreferredWidth(defaultCellSize);
+            requestModel.getColumn(i).setCellRenderer(renderer);
+        }
+
+        statusTable = new JTable(new AppTableModel(1, requestsAmount));
+        statusTable.setRowHeight(defaultCellSize);
+
+        TableColumnModel statusModel = statusTable.getColumnModel();
+        for (int i = 0; i < statusTable.getColumnModel().getColumnCount(); i++) {
+            statusModel.getColumn(i).setPreferredWidth(defaultCellSize);
+            statusModel.getColumn(i).setCellRenderer(renderer);
+        }
     }
 }
