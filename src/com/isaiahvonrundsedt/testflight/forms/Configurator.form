@@ -13,7 +13,7 @@
           <gridbag top="24" left="48" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
-          <font name="Slate For OnePlus Medium" size="16"/>
+          <font/>
           <text value="TestFlight Configurator"/>
         </properties>
       </component>
@@ -28,7 +28,7 @@
           <component id="5abb6" class="javax.swing.JLabel">
             <constraints/>
             <properties>
-              <font name="Slate For OnePlus" size="14" style="0"/>
+              <font/>
               <text value="Enter Page Frame Size:"/>
             </properties>
           </component>
@@ -36,7 +36,7 @@
             <constraints/>
             <properties>
               <columns value="10"/>
-              <font name="Slate For OnePlus" size="14" style="0"/>
+              <font/>
             </properties>
           </component>
         </children>
@@ -52,7 +52,7 @@
           <component id="914cb" class="javax.swing.JLabel">
             <constraints/>
             <properties>
-              <font name="Slate For OnePlus" size="14" style="0"/>
+              <font/>
               <text value="Enter Request Amount:"/>
             </properties>
           </component>
@@ -60,7 +60,7 @@
             <constraints/>
             <properties>
               <columns value="10"/>
-              <font name="Slate For OnePlus" size="14" style="0"/>
+              <font/>
             </properties>
           </component>
         </children>
@@ -76,14 +76,14 @@
           <component id="8e9df" class="javax.swing.JLabel">
             <constraints/>
             <properties>
-              <font name="Slate For OnePlus" size="14" style="0"/>
+              <font/>
               <text value="Select method:"/>
             </properties>
           </component>
           <component id="b55bb" class="javax.swing.JComboBox" binding="methodBox">
             <constraints/>
             <properties>
-              <font name="Slate For OnePlus" size="14" style="0"/>
+              <font/>
               <model>
                 <item value="LRU - Least Recently Used"/>
                 <item value="FIFO - First-In, First-Out"/>
@@ -98,7 +98,7 @@
           <gridbag top="24" left="72" bottom="48" right="72" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
-          <font name="Slate For OnePlus" size="14" style="0"/>
+          <font/>
           <text value="OK"/>
         </properties>
       </component>

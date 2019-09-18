@@ -15,6 +15,8 @@ public class Configurator implements ActionListener {
     private JButton okButton;
     private JPanel root;
 
+    public static final String title = "TestFlight Configurator";
+
     public Configurator(JFrame frame) {
         $$$setupUI$$$();
         thisFrame = frame;
@@ -40,7 +42,7 @@ public class Configurator implements ActionListener {
             JOptionPane.showMessageDialog(root, "Code created by Isaiah Collins Abetong & Cyril Domingo");
 
             JFrame frame = new JFrame("TestFlight");
-            frame.setContentPane(new Core(frames, requests, method).getRoot());
+            frame.setContentPane(new Core(frame, frames, requests, method).getRoot());
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setResizable(false);
             frame.pack();
@@ -60,7 +62,7 @@ public class Configurator implements ActionListener {
         root = new JPanel();
         root.setLayout(new GridBagLayout());
         final JLabel label1 = new JLabel();
-        Font label1Font = this.$$$getFont$$$("Slate For OnePlus Medium", -1, 16, label1.getFont());
+        Font label1Font = this.$$$getFont$$$(null, -1, -1, label1.getFont());
         if (label1Font != null) label1.setFont(label1Font);
         label1.setText("TestFlight Configurator");
         GridBagConstraints gbc;
@@ -83,13 +85,13 @@ public class Configurator implements ActionListener {
         gbc.insets = new Insets(24, 48, 0, 48);
         root.add(panel1, gbc);
         final JLabel label2 = new JLabel();
-        Font label2Font = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, label2.getFont());
+        Font label2Font = this.$$$getFont$$$(null, -1, -1, label2.getFont());
         if (label2Font != null) label2.setFont(label2Font);
         label2.setText("Enter Page Frame Size:");
         panel1.add(label2);
         pageFrameField = new JTextField();
         pageFrameField.setColumns(10);
-        Font pageFrameFieldFont = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, pageFrameField.getFont());
+        Font pageFrameFieldFont = this.$$$getFont$$$(null, -1, -1, pageFrameField.getFont());
         if (pageFrameFieldFont != null) pageFrameField.setFont(pageFrameFieldFont);
         panel1.add(pageFrameField);
         final JPanel panel2 = new JPanel();
@@ -103,13 +105,13 @@ public class Configurator implements ActionListener {
         gbc.insets = new Insets(0, 48, 0, 48);
         root.add(panel2, gbc);
         final JLabel label3 = new JLabel();
-        Font label3Font = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, label3.getFont());
+        Font label3Font = this.$$$getFont$$$(null, -1, -1, label3.getFont());
         if (label3Font != null) label3.setFont(label3Font);
         label3.setText("Enter Request Amount:");
         panel2.add(label3);
         requestAmountField = new JTextField();
         requestAmountField.setColumns(10);
-        Font requestAmountFieldFont = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, requestAmountField.getFont());
+        Font requestAmountFieldFont = this.$$$getFont$$$(null, -1, -1, requestAmountField.getFont());
         if (requestAmountFieldFont != null) requestAmountField.setFont(requestAmountFieldFont);
         panel2.add(requestAmountField);
         final JPanel panel3 = new JPanel();
@@ -123,12 +125,12 @@ public class Configurator implements ActionListener {
         gbc.insets = new Insets(0, 48, 0, 48);
         root.add(panel3, gbc);
         final JLabel label4 = new JLabel();
-        Font label4Font = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, label4.getFont());
+        Font label4Font = this.$$$getFont$$$(null, -1, -1, label4.getFont());
         if (label4Font != null) label4.setFont(label4Font);
         label4.setText("Select method:");
         panel3.add(label4);
         methodBox = new JComboBox();
-        Font methodBoxFont = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, methodBox.getFont());
+        Font methodBoxFont = this.$$$getFont$$$(null, -1, -1, methodBox.getFont());
         if (methodBoxFont != null) methodBox.setFont(methodBoxFont);
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
         defaultComboBoxModel1.addElement("LRU - Least Recently Used");
@@ -136,7 +138,7 @@ public class Configurator implements ActionListener {
         methodBox.setModel(defaultComboBoxModel1);
         panel3.add(methodBox);
         okButton = new JButton();
-        Font okButtonFont = this.$$$getFont$$$("Slate For OnePlus", Font.PLAIN, 14, okButton.getFont());
+        Font okButtonFont = this.$$$getFont$$$(null, -1, -1, okButton.getFont());
         if (okButtonFont != null) okButton.setFont(okButtonFont);
         okButton.setText("OK");
         gbc = new GridBagConstraints();
