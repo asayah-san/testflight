@@ -39,7 +39,8 @@ class TestCLI {
         Simulator simulator = new Simulator(method, frameSize);
         for (int iterator = 0; iterator < requestAmount; iterator++){
             System.out.print("Enter request value: ");
-            int requestValue = scanner.nextInt();
+            String steam = scanner.next();
+            char requestValue = steam.charAt(0);
 
             simulator.newRequest(requestValue);
         }

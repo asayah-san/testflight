@@ -42,12 +42,8 @@ public class Core implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int requestValue = 0;
-        try {
-            requestValue = Integer.parseInt(requestField.getText());
-        } catch (NumberFormatException ex) {
-            finish();
-        }
+        String stream = requestField.getText();
+        int requestValue = Integer.parseInt(stream);
 
         if (requestDone < requestsAmount) {
             simulator.newRequest(requestValue);

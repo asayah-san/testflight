@@ -7,6 +7,7 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
+
         try {
             // Try to make the Application Interface native as possible
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
